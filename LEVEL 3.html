@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+
+    .top-nav {
+        background-color: rgb(20, 189, 211);
+        color: white;
+        height: 90px;
+        width: cover;
+        margin: 0px;
+        position: relative;
+    }
+    .footer {
+        background-color: #8abcf2;
+        color: rgb(46, 164, 17);
+        height: 100px;
+        width: cover;
+        border-top-right-radius: 19px;
+        border-top-left-radius: 19px;
+    }
+     .column {
+        margin: 20px;
+        float: left;
+        padding: 9px;
+        height: 300px; 
+        border-radius: 30px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+     }
+
+
+.row:after {
+  content: " ";
+  display: table;
+  clear: both;
+  }
+
+.top-nav a {
+        float: left;
+        display: block;
+        color: #ecececee;
+        text-align: center;
+        padding:  20px;
+        font-size: 20px;
+        background-color: #094686;
+        margin: 20px;
+        text-underline-offset: NONE;
+        border-radius: 7px;
+        text-decoration-line: none;
+
+    }
+    .top-nav a:hover {
+      background-color: green;
+    }
+
+    .h1 {
+      font-weight: 100;
+      font-family: Arial;
+      text-align: center;
+      text-decoration: dashed;
+    }
+    .p {
+
+      font-family: calibri;
+      font-style: italic;
+      text-align: center;
+      color: black;
+    }
+    .zoom {
+  padding: 50px;
+  transition: transform .2s;
+  width: 250px;
+  height: 250px;
+  float: left;
+
+} 
+
+.zoom:hover {
+  -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+  border-radius: 20px;
+}
+
+  {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;
+height: 100px;
+width: 100px;
+}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100px;
+  position: relative;
+  margin-left: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+  width: 100px;
+  height: 100px;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+       </style>
+    </head>
+    <body> 
+
+        <div class="top-nav">
+            <a href="Ram.html">HOME</a>
+            <a href="TASK_3.html"> ABOUT</a>
+            <a href="http://www.w3schools.com">HELP</a>
+            <a href="mailto:indrasena978@gmail.com">MAIL-US</a>
+            <a href="#">MORE</a>
+        </div>
+            </div>
+          <br><br><br>
+
+
+
+         <h1> Image gallery</h1>
+          <div class="zoom"><img src="8.jpg" width="250" height="250"></div>
+
+          <div class="zoom"> <img src="9.jpg" width="250" height="250" ></div>
+
+          <div class="zoom"> <img src="nature1.jpg" width="250" height="250" ></div>
+
+          <div class="zoom"> <img src="nature2.jpg" width="250" height="250" ></div>
+          </div>
+          <h1>Automatic  Image Slideshow</h1>
+<p>changes automatically</p>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="about.jpg" style="border-radius:80px">
+
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="Details.png" style="border-radius:80px">
+
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="Contact.png" style="border-radius:80px ">
+
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
+
+    </body>
+
+</html>
